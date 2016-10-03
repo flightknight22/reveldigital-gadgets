@@ -94,14 +94,14 @@ function response(obj) {
     var srcProof = null;
 
 
-
+    alert("Working1");
     srcURL=jsonObj.creative_pointer;
 
     srcDuration=jsonObj.duration;
 
     srcType=jsonObj.proof_id;
 
-    alert("Working");
+    alert("Working2");
     if(jsonObj.duration!="null") {
         srcDuration=parseInt(jsonObj.duration)*15;}
 
