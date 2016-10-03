@@ -103,7 +103,7 @@ function response(obj) {
 
     alert("Working");
     if(jsonObj.duration!="null") {
-        srcDuration=parseInt(jsonObj[0].duration)*15;}
+        srcDuration=parseInt(jsonObj.duration)*15;}
 
 
 
