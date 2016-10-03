@@ -52,13 +52,13 @@
 
     var lastType = "";
     var lastProof = "";
-    alert("Working");
+    
 
 
     function makeJSONRequest() {
 
         var params = {};
-
+        alert("Working4");
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 
         var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?"+prefs.getString("deviceId");
