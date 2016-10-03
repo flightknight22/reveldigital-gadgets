@@ -101,28 +101,28 @@ function response(obj) {
 
     srcType=jsonObj[0].proof_id;
 
-
+    alert("Working");
     if(jsonObj[0].duration!="null") {
         srcDuration=parseInt(jsonObj[0].duration)*15;}
 
 
 
     if(srcType=="") {
-        html += '<video autoplay> <source src="' + srcURL + '" type='+'"video/mp4'+'"> </video>';
+        //html += '<video autoplay> <source src="' + srcURL + '" type='+'"video/mp4'+'"> </video>';
     }
     else {
         html += '<img src="' + srcURL + '"/>';
     }
     document.getElementById('content_div').innerHTML = html;
 
-    if(srcDuration!=0)
-    {
-        setTimeout(makeJSONRequest, srcDuration);
-    }
-    document.getElementById('content_div').addEventListener('ended',myHandler,false);
-    function myHandler(e) {
-        makeJSONRequest();
-    }
+    //if(srcDuration!=0)
+    //{
+    //    setTimeout(makeJSONRequest, srcDuration);
+    //}
+    //document.getElementById('content_div').addEventListener('ended',myHandler,false);
+    //function myHandler(e) {
+    //    makeJSONRequest();
+    //}
 
 
     lastUrl=srcURL;
