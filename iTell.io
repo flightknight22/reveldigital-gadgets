@@ -58,7 +58,7 @@
     function makeJSONRequest() {
 
         var params = {};
-        alert("Working4");
+       
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 
         var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?"+prefs.getString("deviceId");
@@ -82,9 +82,9 @@
         var srcURL="";
 
         var html="";
-
+        alert("Working4");
         var jsonObj = JSON.parse(jsonData);
-
+        alert("Working5");
 
         var srcType = "";
 
