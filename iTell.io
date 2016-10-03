@@ -45,7 +45,7 @@
     <div id="content_div"></div>
 
     <script type="text/javascript">
-
+    alert("Working");
     
 
     var prefs = new gadgets.Prefs();
