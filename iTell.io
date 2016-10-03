@@ -82,9 +82,9 @@
         var srcURL="";
 
         var html="";
-        alert("Working6");
-        var jsonObj = JSON.parse(jsonData);
         alert("Working7");
+        var jsonObj = JSON.parse(JSON.stringify(jsonData));
+        alert("Working6");
 
         var srcType = "";
 
