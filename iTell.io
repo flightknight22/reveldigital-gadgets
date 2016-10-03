@@ -124,9 +124,6 @@
         //    makeJSONRequest();
         //}
 
-
-        lastUrl=srcURL;
-
     }
     gadgets.util.registerOnLoadHandler(makeJSONRequest);
 
