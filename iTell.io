@@ -48,89 +48,87 @@
 
     
 
-var prefs = new gadgets.Prefs();
+    var prefs = new gadgets.Prefs();
 
-var lastType = "";
-var lastProof = "";
-
-
+    var lastType = "";
+    var lastProof = "";
 
 
-function makeJSONRequest() {
 
-    var params = {};
 
-    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+    function makeJSONRequest() {
 
-    var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?"+prefs.getString("deviceId");
-    if(lastProof!="" || lastType!="")
-    {
-        url += +"&proof_id="+lastProof+"type="+lastType;
+        var params = {};
+
+        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+
+        var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?"+prefs.getString("deviceId");
+        if(lastProof!="" || lastType!="")
+        {
+            url += +"&proof_id="+lastProof+"type="+lastType;
+        }
+
+
+
+        gadgets.io.makeRequest(url, response, params);
+
     }
 
 
 
-    gadgets.io.makeRequest(url, response, params);
+    function response(obj) {
 
-}
+        var jsonData = obj.data;
 
+        var srcURL="";
 
+        var html="";
 
-function response(obj) {
-
-    var jsonData = obj.data;
-
-    var srcURL="";
-
-    var html="";
-
-    var jsonObj = JSON.parse(jsonData);
+        var jsonObj = JSON.parse(jsonData);
 
 
-    var srcType = "";
+        var srcType = "";
 
-    var srcDuration = 0
+        var srcDuration = 0
 
-    var srcProof = null;
+        var srcProof = null;
 
 
-    alert("Working1");
-    srcURL=jsonObj.creative_pointer;
+        alert("Working1");
+        srcURL=jsonObj.creative_pointer;
 
-    srcDuration=jsonObj.duration;
+        srcDuration=jsonObj.duration;
 
-    srcType=jsonObj.proof_id;
+        srcType=jsonObj.proof_id;
 
-    alert("Working2");
-    if(jsonObj.duration!="null") {
-        srcDuration=parseInt(jsonObj.duration)*15;}
+        alert("Working2");
+        if(jsonObj.duration!="null") {
+            srcDuration=parseInt(jsonObj.duration)*15;}
 
 
 
-    if(srcType=="") {
-        //html += '<video autoplay> <source src="' + srcURL + '" type='+'"video/mp4'+'"> </video>';
+        if(srcType=="") {
+            //html += '<video autoplay> <source src="' + srcURL + '" type='+'"video/mp4'+'"> </video>';
+        }
+        else {
+            html += '<img src="' + srcURL + '"/>';
+        }
+        document.getElementById('content_div').innerHTML = html;
+
+        //if(srcDuration!=0)
+        //{
+        //    setTimeout(makeJSONRequest, srcDuration);
+        //}
+        //document.getElementById('content_div').addEventListener('ended',myHandler,false);
+        //function myHandler(e) {
+        //    makeJSONRequest();
+        //}
+
+
+        lastUrl=srcURL;
+
     }
-    else {
-        html += '<img src="' + srcURL + '"/>';
-    }
-    document.getElementById('content_div').innerHTML = html;
-
-    //if(srcDuration!=0)
-    //{
-    //    setTimeout(makeJSONRequest, srcDuration);
-    //}
-    //document.getElementById('content_div').addEventListener('ended',myHandler,false);
-    //function myHandler(e) {
-    //    makeJSONRequest();
-    //}
-
-
-    lastUrl=srcURL;
-
-
-
-}
-
+    gadgets.util.registerOnLoadHandler(makeJSONRequest);
 
      </script>
 
