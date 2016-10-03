@@ -84,7 +84,7 @@ function response(obj) {
 
     var html="";
 
-    var jsonObj = JSON.parse(JSON.stringify(jsonData));
+    var jsonObj = JSON.parse(jsonData);
 
 
     var srcType = "";
@@ -95,14 +95,14 @@ function response(obj) {
 
 
 
-    srcURL=jsonObj[0].creative_pointer;
+    srcURL=jsonObj.creative_pointer;
 
-    srcDuration=jsonObj[0].duration;
+    srcDuration=jsonObj.duration;
 
-    srcType=jsonObj[0].proof_id;
+    srcType=jsonObj.proof_id;
 
     alert("Working");
-    if(jsonObj[0].duration!="null") {
+    if(jsonObj.duration!="null") {
         srcDuration=parseInt(jsonObj[0].duration)*15;}
 
 
