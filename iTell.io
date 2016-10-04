@@ -56,7 +56,7 @@
 
 
     function makeJSONRequest() {
-
+        alert("Http Call");
         var params = {};
        
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
@@ -100,7 +100,7 @@
             //html += '<video autoplay> <source src="' + srcURL + '" type='+'"video/mp4'+'"> </video>';
         }
         else {
-            html += '<img src="' + srcURL + '"/>';
+            html = '<img src="' + srcURL + '"/>';
         }
         document.getElementById('content_div').innerHTML = html;
 
