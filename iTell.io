@@ -61,11 +61,7 @@
        
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 
-        var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?"+prefs.getString("deviceId");
-        if(lastProof!="" || lastType!="")
-        {
-            url += +"&proof_id="+lastProof+"type="+lastType;
-        }
+        var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du"
 
 
 
@@ -83,7 +79,7 @@
 
         var html="";
         alert("Working9");
-        alert(JSON.stringify(jsonData));
+        alert(jsonData.type);
         var jsonObj = JSON.parse(JSON.stringify(jsonData));
         alert("Working6");
 
