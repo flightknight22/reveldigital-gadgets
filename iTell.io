@@ -103,7 +103,7 @@
             html = '<img src="' + srcURL + '"/>';
         }
         document.getElementById('content_div').innerHTML = html;
-
+        alert("After Set HTML");
         if(srcDuration>0)
         {
             alert(srcDuration);
