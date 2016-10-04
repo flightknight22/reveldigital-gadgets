@@ -104,10 +104,14 @@
         }
         document.getElementById('content_div').innerHTML = html;
 
-        if(srcDuration!=0)
+        if(srcDuration>0)
         {
             alert(srcDuraction);
             setTimeout(makeJSONRequest, srcDuration*1000);
+        }
+        else
+        {
+          alert("Probs Video");
         }
         //document.getElementById('content_div').addEventListener('ended',myHandler,false);
         //function myHandler(e) {
