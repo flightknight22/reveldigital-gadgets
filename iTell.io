@@ -73,15 +73,11 @@
 
     function response(obj) {
 
-        var jsonData = obj.data;
+        var jsonObj = obj.data;
 
         var srcURL="";
 
         var html="";
-        alert("Working9");
-        alert(jsonData.type);
-        var jsonObj = JSON.parse(JSON.stringify(jsonData));
-        alert("Working6");
 
         var srcType = "";
 
@@ -89,8 +85,6 @@
 
         var srcProof = null;
 
-
-        alert("Working1");
         srcURL=jsonObj.creative_pointer;
 
         srcDuration=jsonObj.duration;
