@@ -106,7 +106,7 @@
 
         if(srcDuration>0)
         {
-            alert(srcDuraction);
+            alert(srcDuration);
             setTimeout(makeJSONRequest, srcDuration*1000);
         }
         else
