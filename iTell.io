@@ -82,8 +82,8 @@
         var srcURL="";
 
         var html="";
-        alert("Working8");
-        alert(jsonData);
+        alert("Working9");
+        alert(JSON.stringify(jsonData));
         var jsonObj = JSON.parse(JSON.stringify(jsonData));
         alert("Working6");
 
