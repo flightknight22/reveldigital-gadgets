@@ -63,8 +63,6 @@
 
         var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du"
 
-
-
         gadgets.io.makeRequest(url, response, params);
 
     }
@@ -91,8 +89,9 @@
 
         srcType=jsonObj.proof_id;
 
-        alert("Working2");
         if(jsonObj.duration!="null") {
+            alert("Duration"+jsonObj.duration);
+            alert(parseInt(jsonObj.duration)*15)
             srcDuration=parseInt(jsonObj.duration)*15;}
 
 
