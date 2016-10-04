@@ -105,10 +105,11 @@
         }
         document.getElementById('content_div').innerHTML = html;
 
-        //if(srcDuration!=0)
-        //{
-        //    setTimeout(makeJSONRequest, srcDuration);
-        //}
+        if(srcDuration!=0)
+        {
+            alert(srcDuraction);
+            setTimeout(makeJSONRequest, srcDuration*1000);
+        }
         //document.getElementById('content_div').addEventListener('ended',myHandler,false);
         //function myHandler(e) {
         //    makeJSONRequest();
