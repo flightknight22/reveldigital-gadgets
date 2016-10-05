@@ -84,7 +84,7 @@
         var srcProof = null;
 
         srcURL=jsonObj.creative_pointer;
-
+        alert(srcURL);
         srcDuration=jsonObj.duration;
 
         srcType=jsonObj.proof_id;
