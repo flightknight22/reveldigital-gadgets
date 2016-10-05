@@ -102,7 +102,7 @@
 
         if(srcType!=null) {
             alert("f");
-            html += '<video autoplay> <source src="' + https://s3.amazonaws.com/cms-transcoding-input/2015-9/38178d10-8c66-48c8-8a0d-5112aca828bf.mp4 + '" type='+'"video/mp4'+'"> </video>';
+            //html += '<video autoplay> <source src="' + https://s3.amazonaws.com/cms-transcoding-input/2015-9/38178d10-8c66-48c8-8a0d-5112aca828bf.mp4 + '" type='+'"video/mp4'+'"> </video>';
         }
         else {
             html = '<img src="' + srcURL + '"/>';
