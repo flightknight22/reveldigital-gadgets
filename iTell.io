@@ -57,31 +57,14 @@
     }
     function makeJsonRequest()
     {
-      var request = $.ajax({
-
-              url: "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du",
-
-              success: function(response) { 
-
-                if(!response){ 
-
-                  alert("Was null");
-
-                } else {
-
-                  alert(JSON.stringify(response));
-
-                }
-
-
-              },
-
-              timeout: 5000
-
-            }).fail( function( xhr, status ) {
-                alert(xhr);
-            });
-            }
+            var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du";
+            var res = encodeURIComponent(uri);
+            $.getJSON("https://as1.reveldigital.com/proxy?url=" + res, function (data) {
+                $.each(data, function (index, item) {
+                    alert("Item is " + JSON.stringify(item));
+                });
+            }, 1000);
+    }
 
 
 
