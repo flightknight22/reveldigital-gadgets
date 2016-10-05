@@ -46,7 +46,7 @@
 
     <script type="text/javascript">
     
-    alert("Test Gadget 2");
+    alert("Test Gadget 3");
 
     var prefs = new gadgets.Prefs();
 
