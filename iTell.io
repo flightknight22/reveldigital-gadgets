@@ -52,9 +52,11 @@
 
     var lastType = "";
     var lastProof = "";
+    
     function init() {
       makeJsonRequest();
     }
+    
     function makeJsonRequest()
     {
             var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du";
@@ -64,6 +66,7 @@
                     alert("Item is " + JSON.stringify(item));
                 });
             }, 1000);
+            responseParse(item);
     }
 
 
