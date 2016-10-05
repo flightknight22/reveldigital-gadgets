@@ -90,21 +90,21 @@
         alert(srcURL);
         alert("New Gadget 3");
         srcDuration=jsonObj.duration;
-        alert(jsonObj.device)
+        //alert(jsonObj.device)
         srcType=jsonObj.proof_id;
 
         if(jsonObj.duration!="null") {
-            alert("Duration"+jsonObj.duration);
+            //alert("Duration"+jsonObj.duration);
             alert(parseInt(jsonObj.duration)*15)
             srcDuration=parseInt(jsonObj.duration)*15;}
 
 
 
         if(srcType!=null) {
-            html += '<video autoplay> <source src="' + https://s3.amazonaws.com/cms-transcoding-input/2015-9/38178d10-8c66-48c8-8a0d-5112aca828bf.mp4 + '" type='+'"video/mp4'+'"> </video>';
+            //html += '<video autoplay> <source src="' + https://s3.amazonaws.com/cms-transcoding-input/2015-9/38178d10-8c66-48c8-8a0d-5112aca828bf.mp4 + '" type='+'"video/mp4'+'"> </video>';
         }
         else {
-            //html = '<img src="' + srcURL + '"/>';
+            html = '<img src="' + srcURL + '"/>';
         }
         document.getElementById('content_div').innerHTML = html;
         alert("After Set HTML");
