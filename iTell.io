@@ -69,7 +69,7 @@
 
                 } else {
 
-                  alert(JSON.parse(response));
+                  alert(JSON.stringify(response));
 
                 }
 
