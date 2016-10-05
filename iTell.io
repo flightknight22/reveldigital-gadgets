@@ -75,7 +75,7 @@
     function response(obj) {
 
         var jsonObj = obj.data;
-
+        alert(JSON.stringify(jsonObj));
         var srcURL="";
 
         var html="";
