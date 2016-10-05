@@ -88,9 +88,9 @@
 
         srcURL=jsonObj.creative_pointer;
         alert(srcURL);
-        alert("New Gadget");
+        alert("New Gadget 1");
         srcDuration=jsonObj.duration;
-
+        alert(jsonObj.device)
         srcType=jsonObj.proof_id;
 
         if(jsonObj.duration!="null") {
