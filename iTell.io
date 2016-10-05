@@ -56,22 +56,32 @@
     var lastType = "";
     var lastProof = "";
     
+    var request = $.ajax({
+
+            url: "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du",
+
+            success: function(response) { 
+
+              if(!response){ 
+
+                alert("Was null");
+
+              } else {
+
+                alert(JSON.stringify(response));
+
+              }
 
 
-    function makeJSONRequest() {
-        alert("Http Call");
-        var params = {};
-       
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        
-        var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du";
-        if(lastType!="" || lastProof!="")
-        {
-          url+="&"+lastProof+"&"+lastType;
-        }
-        gadgets.io.makeRequest(url, response, params);
+            },
 
-    }
+            timeout: 5000
+
+          }).fail( function( xhr, status ) {
+              alert(xhr);
+          });
+
+
 
 
 
@@ -127,7 +137,6 @@
         //}
 
     }
-    gadgets.util.registerOnLoadHandler(makeJSONRequest);
 
      </script>
 
