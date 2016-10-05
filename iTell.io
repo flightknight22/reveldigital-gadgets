@@ -61,7 +61,7 @@
        
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
         
-        var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du"
+        var url = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du";
         if(lastType!="" || lastProof!="")
         {
           url+="&"+lastProof+"&"+lastType;
