@@ -52,31 +52,36 @@
 
     var lastType = "";
     var lastProof = "";
-    
-    var request = $.ajax({
+    function init() {
+      makeJsonRequest();
+    }
+    function makeJsonRequest()
+    {
+      var request = $.ajax({
 
-            url: "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du",
+              url: "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du",
 
-            success: function(response) { 
+              success: function(response) { 
 
-              if(!response){ 
+                if(!response){ 
 
-                alert("Was null");
+                  alert("Was null");
 
-              } else {
+                } else {
 
-                alert(JSON.stringify(response));
+                  alert(JSON.stringify(response));
 
-              }
+                }
 
 
-            },
+              },
 
-            timeout: 5000
+              timeout: 5000
 
-          }).fail( function( xhr, status ) {
-              alert(xhr);
-          });
+            }).fail( function( xhr, status ) {
+                alert(xhr);
+            });
+            }
 
 
 
@@ -95,7 +100,6 @@
         var srcDuration = 0
 
         var srcProof = null;
-
         srcURL=jsonObj.creative_pointer;
         alert(srcURL);
         alert("New Gadget 3");
@@ -134,7 +138,7 @@
         //}
 
     }
-
+    gadgets.util.registerOnLoadHandler(init);
      </script>
 
   ]]>
