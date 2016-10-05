@@ -46,7 +46,7 @@
 
     <script type="text/javascript">
     
-    alert("Test Gadget 4");
+    alert("Test Gadget 5);
 
     var prefs = new gadgets.Prefs();
 
@@ -66,7 +66,7 @@
                     alert("Item is " + JSON.stringify(item));
                 });
             }, 1000);
-            responseParse(item);
+            //responseParse(item);
     }
 
 
