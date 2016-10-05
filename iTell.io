@@ -46,7 +46,7 @@
 
     <script type="text/javascript">
     
-    alert("Test Gadget");
+    alert("Test Gadget 2");
 
     var prefs = new gadgets.Prefs();
 
@@ -87,10 +87,7 @@
 
 
 
-    function response(obj) {
-
-        var jsonObj = obj.data;
-        alert(JSON.stringify(jsonObj));
+    function responseParse(obj) {
         var srcURL="";
 
         var html="";
@@ -105,7 +102,7 @@
         alert("New Gadget 3");
         srcDuration=jsonObj.duration;
         //alert(jsonObj.device)
-        srcType=jsonObj.proof_id;
+        //srcType=jsonObj.proof_id;
 
         if(jsonObj.duration!="null") {
             //alert("Duration"+jsonObj.duration);
