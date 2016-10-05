@@ -46,7 +46,7 @@
 
     <script type="text/javascript">
     
-    
+    alert("Test Gadget");
 
     var prefs = new gadgets.Prefs();
 
