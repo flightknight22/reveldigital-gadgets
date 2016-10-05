@@ -60,7 +60,7 @@
             var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du";
             var res = encodeURIComponent(uri);
             $.getJSON("https://as1.reveldigital.com/proxy?url=" + res, function (data) {
-                $.each(data, function (index, item) {
+                $.(data, function (index, item) {
                     alert("Item is " + JSON.stringify(item));
                 });
             }, 1000);
