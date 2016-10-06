@@ -36,7 +36,9 @@
     height: __UP_rdH__px;
 
   }
-  video { margin: 0 auto; width: 400px; }
+  video {margin-left: auto;
+    margin-right: auto;
+    display: block}
   </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -75,6 +77,7 @@
     function setImage(obj) {
         alert("Image");
         var image = document.createElement('image');
+	alert(obj["duration"]*15*1000);
         var srcDuration=parseInt(obj["duration"])*15*1000;
         html = '<img src="' + obj["creative_pointer"] + '"/>';
         document.getElementById('content_div').innerHTML = html;
