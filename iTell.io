@@ -51,27 +51,25 @@
         makeJsonRequest();
        }
 
-		  function makeJsonRequest(proofID, proofType)
-		  {
-              var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du";
-              if(proofID && proofType)
-              {
-                uri+="&type="+proofType+"&proof_id="+proofID;
-              }
-              var res = encodeURIComponent(uri);
-              $.getJSON("https://as1.reveldigital.com/proxy?url=" + res, function (data) {
-                if(data["creative_pointer"].endsWith(".mp4"))
-                {
-                    setVideo(data);
-                }
-                else
-                {
-                    setImage(data);
-                }
-              }, 1000);
-
-		  }
-
+      function makeJsonRequest(proofID, proofType){
+	      var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device=EX023111-du";
+	      if(proofID && proofType)
+	      {
+		uri+="&type="+proofType+"&proof_id="+proofID;
+	      }
+	      alert(uri);
+	      var res = encodeURIComponent(uri);
+	      $.getJSON("https://as1.reveldigital.com/proxy?url=" + res, function (data) {
+		if(data["creative_pointer"].endsWith(".mp4"))
+		{
+		    setVideo(data);
+		}
+		else
+		{
+		    setImage(data);
+		}
+	      }, 1000);
+	}
 
 
     function setImage(obj) {
@@ -100,18 +98,6 @@
       }
     }
     
-    function setInfo(data) {
-      if (true) {
-        var container = $('#info_container');
-        container.append(data + '<br>');
-      }	
-      if (true) {
-        console.log(data);
-      }
-      if (true) {
-        alert(data);
-      }
-    }
     
     gadgets.util.registerOnLoadHandler(initialize);
      </script>
