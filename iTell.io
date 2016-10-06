@@ -82,7 +82,6 @@
     
     function setVideo(obj){
       var video = document.createElement('video');
-
       document.getElementById('content_div').innerHTML="";
       video.src = obj["creative_pointer"];
       document.getElementById('content_div').appendChild(video);
