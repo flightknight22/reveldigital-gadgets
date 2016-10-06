@@ -89,6 +89,10 @@
       if(video)
       {
         video.play();
+	var video = document.getElementById('video');
+	video.addEventListener('click',function(){
+	  video.play();
+	},false);
         video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
       }
     }
