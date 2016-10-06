@@ -77,10 +77,11 @@
     function setImage(obj) {
         alert("Image");
         var image = document.createElement('image');
-	alert(obj["duration"]*15*1000);
+	//alert(obj["duration"]*15*1000);
         var srcDuration=parseInt(obj["duration"])*15*1000;
         html = '<img src="' + obj["creative_pointer"] + '"/>';
         document.getElementById('content_div').innerHTML = html;
+	alert(srcDuration);
         setTimeout(function(){makeJsonRequest(obj["proof_id"], obj["type"]);}, srcDuration);
     }
     
