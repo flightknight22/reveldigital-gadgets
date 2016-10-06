@@ -21,7 +21,6 @@
   <style type="text/css">
 
   body
-
   {
 
     background: transparent;
@@ -37,7 +36,7 @@
     height: __UP_rdH__px;
 
   }
-
+  video { margin: 0 auto; width: 400px; }
   </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
