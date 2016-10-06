@@ -59,7 +59,8 @@
 	      }
 	      var res = encodeURIComponent(uri);
 	      $.getJSON("https://as1.reveldigital.com/proxy?url=" + res, function (data) {
-		if(data["creative_pointer"].endsWith(".mp4"))
+	        var str = data["creative_pointer"];
+		if(str.substr(str.length-4, 4)===".mp4")
 		{
 		    setVideo(data);
 		}
