@@ -52,7 +52,7 @@
        }
 
       function makeJsonRequest(proofID, proofType){
-	      var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?"+prefs.getString("deviceId");
+	      var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device="+prefs.getString("deviceId");
 	      if(proofID && proofType)
 	      {
 		uri+="&type="+proofType+"&proof_id="+proofID;
