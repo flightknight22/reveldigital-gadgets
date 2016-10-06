@@ -57,6 +57,7 @@
 	      {
 		uri+="&type="+proofType+"&proof_id="+proofID;
 	      }
+	      alert(uri);
 	      var res = encodeURIComponent(uri);
 	      $.getJSON("https://as1.reveldigital.com/proxy?url=" + res, function (data) {
 		if(data["creative_pointer"].endsWith(".mp4"))
