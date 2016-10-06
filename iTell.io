@@ -92,6 +92,7 @@
 	var video = document.getElementById('video');
 	video.addEventListener('click',function(){
 	  video.play();
+	  alert("You Clicked");
 	},false);
         video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
       }
