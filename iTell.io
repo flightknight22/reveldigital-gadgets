@@ -50,7 +50,7 @@
       function initialize() {
         makeJsonRequest();
        }
-
+$("#element").on("touchend", function () { setInfo("message"); });
       function makeJsonRequest(proofID, proofType){
 	      var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device="+prefs.getString("deviceId");
 	      if(proofID && proofType)
@@ -89,6 +89,7 @@
       if(video)
       {
         //video.play();
+	$("#content_div").on("touchend", function () { setInfo("message"); });
 	var video = document.getElementById('video');
 	document.getElementById('content_div').addEventListener('click',function(){video.play()});
         video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
