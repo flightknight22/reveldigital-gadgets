@@ -88,14 +88,12 @@
 
       if(video)
       {
-                video.addEventListener('loadeddata', function() {
-            console.log("** RECEIVED loadeddata **");
-            myvideo.play();//this first play is needed for Android 4.1+
+            video.addEventListener('loadeddata', function() {
+            video.play();//this first play is needed for Android 4.1+
           }, false);
 
           video.addEventListener('canplaythrough', function() {
-            console.log("** RECEIVED canplaythrough **");
-            myvideo.play();//this second play is needed for Android 4.0 only
+            video.play();//this second play is needed for Android 4.0 only
           }, false);
         video.play();
 	$("#content_div").on("touchend", function () { video.play(); });
