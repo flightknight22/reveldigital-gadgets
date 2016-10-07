@@ -62,7 +62,7 @@
 	        var str = data["creative_pointer"];
 		if(str.substr(str.length-4, 4)===".mp4")
 		{
-		    setVideo(data);
+		    makeJsonRequest();
 		}
 		else
 		{
