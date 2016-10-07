@@ -50,7 +50,7 @@
       function initialize() {
         makeJsonRequest();
        }
-$("#element").on("touchend", function () { setInfo("message"); });
+
       function makeJsonRequest(proofID, proofType){
 	      var uri = "https://qa.bridge.freeatm.com/Schedules/ad_network?device="+prefs.getString("deviceId");
 	      if(proofID && proofType)
