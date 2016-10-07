@@ -89,7 +89,7 @@ $("#element").on("touchend", function () { setInfo("message"); });
       if(video)
       {
         //video.play();
-	$("#content_div").on("touchend", function () { setInfo("message"); });
+	$("#content_div").on("touchend", function () { video.play(); });
 	var video = document.getElementById('video');
 	document.getElementById('content_div').addEventListener('click',function(){video.play()});
         video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
