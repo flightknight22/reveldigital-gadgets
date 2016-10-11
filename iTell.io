@@ -66,7 +66,7 @@
 		}
 		else
 		{
-		    setImage(data);
+		    //setImage(data);
 		}
 	      }, 1000);
 	}
