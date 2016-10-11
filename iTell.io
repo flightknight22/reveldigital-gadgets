@@ -40,7 +40,7 @@
     margin-right: auto;
     display: block}
   </style>
-
+    <script type="text/javascript" src="http://www.eib-dz.com/public/js/jwplayer/jwplayer.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <div id="content_div"></div>
@@ -107,7 +107,15 @@
     gadgets.util.registerOnLoadHandler(initialize);
      </script>
 
-  ]]>
+
+<body>
+
+<video autoplay muted>
+  <source src="https://s3.amazonaws.com/cms-transcoding-input/2015-9/38178d10-8c66-48c8-8a0d-5112aca828bf.mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+</body>]]>
 
   </Content>
 
