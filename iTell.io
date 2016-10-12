@@ -40,7 +40,7 @@
     margin-right: auto;
     display: block}
   </style>
-    <script type="text/javascript" src="http://www.eib-dz.com/public/js/jwplayer/jwplayer.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <div id="content_div"></div>
@@ -62,11 +62,11 @@
 	        var str = data["creative_pointer"];
 		if(str.substr(str.length-4, 4)===".mp4")
 		{
-		    makeJsonRequest();
+		    setVideo(data);
 		}
 		else
 		{
-		    //setImage(data);
+		    setImage(data);
 		}
 	      }, 1000);
 	}
@@ -76,29 +76,46 @@
         var image = document.createElement('image');
         var srcDuration=parseInt(obj["duration"])*15*1000;
         html = '<img src="' + obj["creative_pointer"] + '"/>';
-        document.getElementById('content_div').innerHTML = html;
-        setTimeout(function(){makeJsonRequest(obj["proof_id"], obj["type"]);}, srcDuration);
+	var container = $('#content_div');
+
+		container.fadeOut({
+
+			duration: 1000,
+
+			done: function () {
+
+				container.text("$" + data);
+        			document.getElementById('content_div').innerHTML = html;
+        			setTimeout(function(){makeJsonRequest(obj["proof_id"], obj["type"]);}, srcDuration);
+				container.fadeIn();
+			}
+		});
+
     }
     
     function setVideo(obj){
       var video = document.createElement('video');
-      document.getElementById('content_div').innerHTML="";
       video.src = obj["creative_pointer"];
+      document.getElementById('content_div').innerHTML="";
       document.getElementById('content_div').appendChild(video);
+	var container = $('#content_div');
 
+			container.fadeOut({
+
+				duration: 1000,
+
+				done: function () {
+
+					container.text("$" + data);
+
+					container.fadeIn();
+
+				}
+
+			});
       if(video)
       {
-            video.addEventListener('loadeddata', function() {
-            video.play();//this first play is needed for Android 4.1+
-          }, false);
-
-          video.addEventListener('canplaythrough', function() {
-            video.play();//this second play is needed for Android 4.0 only
-          }, false);
         video.play();
-	$("#content_div").on("touchend", function () { video.play(); });
-	var video = document.getElementById('video');
-	document.getElementById('content_div').addEventListener('click',function(){video.play()});
         video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
       }
     }
@@ -107,15 +124,7 @@
     gadgets.util.registerOnLoadHandler(initialize);
      </script>
 
-
-<body>
-
-<video autoplay muted>
-  <source src="https://s3.amazonaws.com/cms-transcoding-input/2015-9/38178d10-8c66-48c8-8a0d-5112aca828bf.mp4">
-  Your browser does not support HTML5 video.
-</video>
-
-</body>]]>
+  ]]>
 
   </Content>
 
