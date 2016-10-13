@@ -83,7 +83,7 @@
     function setVideo(obj){
         var video = document.createElement('video');
         video.src = obj["creative_pointer"];
-        myVar = setTimeout(function(){ makeJsonRequest(); }, 4000);
+        myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
         if(video)
         {
             video.addEventListener("canplay",  function() {
