@@ -86,7 +86,7 @@
       myVar = setTimeout(function(){ makeJsonRequest(); }, 4000);
       if(video)
       {
-      	video.oncanplay= function {
+      	video.oncanplay= function() {
 		clearTimeout(myVar);
 		document.getElementById('content_div').innerHTML="";
 		document.getElementById('content_div').appendChild(video);
