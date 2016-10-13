@@ -82,14 +82,15 @@
     
     function setVideo(obj){
       var video = document.createElement('video');
-      document.getElementById('content_div').innerHTML="";
       video.src = obj["creative_pointer"];
-      document.getElementById('content_div').appendChild(video);
 
       if(video)
       {
-        video.play();
-        video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
+      	video.oncanplay= function {
+		document.getElementById('content_div').innerHTML="";
+		document.getElementById('content_div').appendChild(video);
+		video.play();
+		video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);}
       }
     }
     
