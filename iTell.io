@@ -87,6 +87,7 @@
         if(video)
         {
             video.addEventListener("canplay",  function() {
+	    	alert("Can Play");
                 clearTimeout(myVar);
                 document.getElementById('content_div').innerHTML="";
                 document.getElementById('content_div').appendChild(video);
