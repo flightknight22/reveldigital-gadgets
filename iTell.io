@@ -87,8 +87,8 @@
         if(video)
         {
 	    video.play();
-            video.addEventListener("canplay",  function() {
-	    	alert("Can Play");
+            video.addEventListener(""playing"",  function() {
+	    	alert("Playing");
                 clearTimeout(myVar);
 
                 setTimeout(function(){document.getElementById('content_div').innerHTML="";
