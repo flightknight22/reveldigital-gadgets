@@ -86,13 +86,14 @@
         myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
         if(video)
         {
+	    video.play();
             video.addEventListener("canplay",  function() {
 	    	alert("Can Play");
                 clearTimeout(myVar);
                 document.getElementById('content_div').innerHTML="";
                 document.getElementById('content_div').appendChild(video);
-                video.play();
-                video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);});
+                //video.play();
+                //video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);});
         }
     }
     
