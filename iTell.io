@@ -86,17 +86,24 @@
         myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
 	document.getElementById('content_div').innerHTML="";
         document.getElementById('content_div').appendChild(video);  
-        if(video)
+	
+	var container = $('#content_div');
+	if(video)
         {
 	    video.play();
-            video.addEventListener("playing",  function() {
-	    	alert("Playing");
-                clearTimeout(myVar);
-
-
-		video.play();
-                video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);});
+	    alert("Playing");
+	    clearTimeout(myVar);
+	    video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
         }
+	container.fadeOut({
+			duration: 1000,
+			done: function () {
+				container.text("$" + data);
+				container.fadeIn();
+			}
+		});
+		
+
     }
     
     
