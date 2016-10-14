@@ -98,8 +98,9 @@
 		done: function () {
 			document.getElementById('content_div').innerHTML="";
 			document.getElementById('content_div').appendChild(video);  
-			video.play();
 			container.fadeIn();
+			video.play();
+			alert("PLay");
 		}
 	});
 
