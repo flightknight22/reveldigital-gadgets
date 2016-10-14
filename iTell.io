@@ -76,7 +76,15 @@
         var image = document.createElement('image');
         var srcDuration=parseInt(obj["duration"])*15*1000;
         html = '<img src="' + obj["creative_pointer"] + '"/>';
-        document.getElementById('content_div').innerHTML = html;
+	var container = $('#content_div');
+		container.fadeOut({
+			duration: 1000,
+			done: function () {
+				document.getElementById('content_div').innerHTML = html;
+				container.fadeIn();
+			}
+	});
+	
         setTimeout(function(){makeJsonRequest(obj["proof_id"], obj["type"]);}, srcDuration);
     }
     
