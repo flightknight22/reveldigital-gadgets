@@ -76,28 +76,36 @@
         var image = document.createElement('image');
         var srcDuration=parseInt(obj["duration"])*15*1000;
         html = '<img src="' + obj["creative_pointer"] + '"/>';
-        document.getElementById('content_div').innerHTML = html;
+	container.fadeOut({
+			duration: 1000,
+			done: function () {
+				document.getElementById('content_div').innerHTML = html;
+				container.text("$" + data);
+				container.fadeIn();
+			}
+		});
+        
         setTimeout(function(){makeJsonRequest(obj["proof_id"], obj["type"]);}, srcDuration);
     }
     
     function setVideo(obj){
         var video = document.createElement('video');
         video.src = obj["creative_pointer"];
-        myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
-	document.getElementById('content_div').innerHTML="";
-        document.getElementById('content_div').appendChild(video);  
-	
-	var container = $('#content_div');
-	if(video)
-        {
-	    video.play();
-	    alert("Playing");
-	    clearTimeout(myVar);
-	    video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
-        }
+
 	container.fadeOut({
 			duration: 1000,
 			done: function () {
+			        myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
+				document.getElementById('content_div').innerHTML="";
+				document.getElementById('content_div').appendChild(video);  
+
+				var container = $('#content_div');
+				if(video)
+				{
+				    video.play();
+				    clearTimeout(myVar);
+				    video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
+				}
 				container.text("$" + data);
 				container.fadeIn();
 			}
