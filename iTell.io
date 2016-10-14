@@ -99,11 +99,9 @@
 			document.getElementById('content_div').innerHTML="";
 			document.getElementById('content_div').appendChild(video);  
 			container.fadeIn();
-			video.play();
-			alert("PLay");
 		}
 	});
-
+	video.play();
         if(video)
         {
                 clearTimeout(myVar);
