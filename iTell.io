@@ -87,7 +87,7 @@
         if(video)
         {
 	    video.play();
-            video.addEventListener(""playing"",  function() {
+            video.addEventListener("playing",  function() {
 	    	alert("Playing");
                 clearTimeout(myVar);
 
