@@ -76,15 +76,7 @@
         var image = document.createElement('image');
         var srcDuration=parseInt(obj["duration"])*15*1000;
         html = '<img src="' + obj["creative_pointer"] + '"/>';
-	var container = $('#content_div');
-		container.fadeOut({
-			duration: 1000,
-			done: function () {
-				document.getElementById('content_div').innerHTML = html;
-				container.fadeIn();
-			}
-	});
-	
+        document.getElementById('content_div').innerHTML = html;
         setTimeout(function(){makeJsonRequest(obj["proof_id"], obj["type"]);}, srcDuration);
     }
     
@@ -92,14 +84,13 @@
         var video = document.createElement('video');
         video.src = obj["creative_pointer"];
         myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
-
+	document.getElementById('content_div').innerHTML="";
+        document.getElementById('content_div').appendChild(video);  
         if(video)
         {
-		document.getElementById('content_div').innerHTML="";
-		document.getElementById('content_div').appendChild(video);  
-		video.play();
-                clearTimeout(myVar);
-		video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
+	    video.play();
+            clearTimeout(myVar);
+            video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
         }
     }
     
