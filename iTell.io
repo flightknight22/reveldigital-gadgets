@@ -84,6 +84,8 @@
         var video = document.createElement('video');
         video.src = obj["creative_pointer"];
         myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
+	document.getElementById('content_div').innerHTML="";
+        document.getElementById('content_div').appendChild(video);  
         if(video)
         {
 	    video.play();
@@ -91,8 +93,8 @@
 	    	alert("Playing");
                 clearTimeout(myVar);
 
-                setTimeout(function(){document.getElementById('content_div').innerHTML="";
-                document.getElementById('content_div').appendChild(video);  video.play(); }, 5000);
+
+		video.play();
                 video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);});
         }
     }
