@@ -96,14 +96,14 @@
 	container.fadeOut({
 		duration: 1500,
 		done: function () {
-			document.getElementById('content_div').innerHTML="";
-			document.getElementById('content_div').appendChild(video);  
 			container.fadeIn();
 		}
 	});
-	video.play();
         if(video)
         {
+		document.getElementById('content_div').innerHTML="";
+		document.getElementById('content_div').appendChild(video);  
+		video.play();
                 clearTimeout(myVar);
 		video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
         }
