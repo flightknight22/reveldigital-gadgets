@@ -92,18 +92,21 @@
         var video = document.createElement('video');
         video.src = obj["creative_pointer"];
         myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
-	document.getElementById('content_div').innerHTML="";
-        document.getElementById('content_div').appendChild(video);  
+	var container = $('#content_div');
+	container.fadeOut({
+		duration: 1500,
+		done: function () {
+			document.getElementById('content_div').innerHTML="";
+			document.getElementById('content_div').appendChild(video);  
+			video.play();
+			container.fadeIn();
+		}
+	});
+
         if(video)
         {
-	    video.play();
-            video.addEventListener("playing",  function() {
-	    	alert("Playing");
                 clearTimeout(myVar);
-
-
-		video.play();
-                video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);});
+		video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);
         }
     }
     
