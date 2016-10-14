@@ -91,8 +91,8 @@
 	    	alert("Can Play");
                 clearTimeout(myVar);
 
-                setTimeout(function(){ video.play();                 document.getElementById('content_div').innerHTML="";
-                document.getElementById('content_div').appendChild(video);}, 5000);
+                setTimeout(function(){document.getElementById('content_div').innerHTML="";
+                document.getElementById('content_div').appendChild(video);  video.play(); }, 5000);
                 video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);});
         }
     }
