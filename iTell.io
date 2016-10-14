@@ -76,6 +76,7 @@
         var image = document.createElement('image');
         var srcDuration=parseInt(obj["duration"])*15*1000;
         html = '<img src="' + obj["creative_pointer"] + '"/>';
+	var container = $('#content_div');
 	container.fadeOut({
 			duration: 1000,
 			done: function () {
