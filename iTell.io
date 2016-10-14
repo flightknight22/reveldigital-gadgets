@@ -92,13 +92,7 @@
         var video = document.createElement('video');
         video.src = obj["creative_pointer"];
         myVar = setTimeout(function(){ makeJsonRequest(); }, 10000);
-	var container = $('#content_div');
-	container.fadeOut({
-		duration: 1500,
-		done: function () {
-			container.fadeIn();
-		}
-	});
+
         if(video)
         {
 		document.getElementById('content_div').innerHTML="";
