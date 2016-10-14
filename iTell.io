@@ -92,7 +92,7 @@
                 clearTimeout(myVar);
                 document.getElementById('content_div').innerHTML="";
                 document.getElementById('content_div').appendChild(video);
-                //video.play();
+                setTimeout(function(){ video.play(); }, 5000);
                 video.addEventListener('ended',function(){makeJsonRequest(obj["proof_id"], obj["type"])},false);});
         }
     }
