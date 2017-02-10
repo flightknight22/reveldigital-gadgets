@@ -6,8 +6,11 @@
 
         <UserPref name="apikey" display_name="API KEY" default_value="" />
         <UserPref name="Zoom" display_name="Zoom" default_value="13" />
-        <UserPref name="imageUrl" display_name="Marker Icon URL" default_value="" />
-        <UserPref name="stoppedUrl" display_name="Stopped Marker Icon URL" default_value="" />        
+        <UserPref name=“markerIcon” display_name=“Marker Icon” datatype="enum" default_value=“0”>
+          <EnumValue value=“0” display_value=“Google Marker”/>
+          <EnumValue value=“1” display_value=“Truck”/>
+          <EnumValue value=“2” display_value=“Taxi”/>
+        </UserPref>      
         <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
         <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />  
         
