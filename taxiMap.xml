@@ -31,6 +31,7 @@
         var mapCenter = false;
           function initialize() {
             initMap();
+            alert("Hello");
             alert("Zoom: "+zoom);
             alert("API Key: "+revelkey);
            }
