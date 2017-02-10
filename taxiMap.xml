@@ -24,7 +24,7 @@
     <div id="map"></div>
     <script type="text/javascript">
         var prefs = new gadgets.Prefs();
-        var revelKey=prefs.getString("apikey");
+        var revelKey = prefs.getString("apikey");
         var map;
         var zoom = prefs.getString("Zoom");
         var array = new Array();
@@ -32,7 +32,7 @@
           function initialize() {
             alert("Hello");
             alert("Zoom: "+zoom);
-            alert("API Key: "+revelkey);
+            alert("API Key: "+revelKey);
             initMap();
            }
         function initMap() {
@@ -60,7 +60,7 @@
                     if (latitudeH != null && longitudeH != null) {
                         if (map != null && mapCenter==false) {
                             map.panTo({lat: latitudeH, lng: longitudeH});
-                            map.setZoom(zoom);
+                            map.setZoom(Number(zoom));
                             mapCenter = true;
                         }
                         var value = keyInArray(deviceName)
