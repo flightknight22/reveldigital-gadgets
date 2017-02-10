@@ -15,8 +15,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
         #map {
-            width: __UP_rdW__px;
-            height: __UP_rdH__px;
+            height: 1000px;
+            width: 100%;
 
         }
     </style>
