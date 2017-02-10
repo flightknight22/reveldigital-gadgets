@@ -6,6 +6,8 @@
 
         <UserPref name="apikey" display_name="API KEY" default_value="" />
         <UserPref name="Zoom" display_name="Zoom" default_value="" />
+        <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
+        <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />  
         
     </ModulePrefs>
 <Content type="html">
@@ -15,9 +17,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <style>
             #map {
-                height: 1000px;
-                width: 100%;
-
+                width: __UP_rdW__px;
+                height: __UP_rdH__px;
             }
         </style>
     </head>
