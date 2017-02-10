@@ -27,11 +27,12 @@
     var prefs = new gadgets.Prefs();
     var revelKey=prefs.getString("apikey");
     var map;
-    var zoom = prefs.getString("zoom");
+    var zoom = prefs.getString("Zoom");
     var array = new Array();
     var mapCenter = false;
       function initialize() {
         initMap();
+        alert(zoom);
        }
     function initMap() {
 
@@ -67,7 +68,7 @@
                                 position: {lat: latitudeH, lng: longitudeH},
                                 map: map
                             });
-                            alert("added");
+                    
                             array.push(new MapObject(deviceName,marker));
                         }
                         else {
@@ -84,7 +85,6 @@
             var mapObj = array[i];
             var name = mapObj.getNameObj();
             var marker = mapObj.getMapMarker();
-            alert(name + " : " + keyValue);
             if(name == keyValue){
                 return marker;
             }
