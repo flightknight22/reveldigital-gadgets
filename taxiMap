@@ -2,7 +2,7 @@
 
 <Module>
 
-    <ModulePrefs title="Revel iTell.io Gadget" description="Displays an add from iTell.io" author="RevelDigital" background="transparent"/>
+    <ModulePrefs title="Revel Taxi Gadget" description="Displays Taxis On A Map" author="RevelDigital" background="transparent"/>
 
     <UserPref name="apikey" display_name="API KEY" default_value="" />
     <UserPref name="Zoom" display_name="Zoom" default_value="" />
