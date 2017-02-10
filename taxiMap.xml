@@ -29,7 +29,7 @@
     <script type="text/javascript">
         var prefs = new gadgets.Prefs();
         var revelKey = prefs.getString("apikey");
-        var markerIcon = revel
+        //var markerIcon = revel;
         var map;
         var zoom = prefs.getString("Zoom");
         var array = new Array();
