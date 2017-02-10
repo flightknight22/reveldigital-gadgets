@@ -30,9 +30,6 @@
         var array = new Array();
         var mapCenter = false;
           function initialize() {
-            alert("Hello");
-            alert("Zoom: "+zoom);
-            alert("API Key: "+revelKey);
             initMap();
            }
         function initMap() {
@@ -45,7 +42,7 @@
             var myVar = setInterval(updateMap, 10 * 1000);
         }
         function updateMap() {
-            $.getJSON("https://as1.reveldigital.com/proxy?url=http://api.reveldigital.com/devices?api_key=PHeA6yKLpdw", function (data) {
+            $.getJSON("https://as1.reveldigital.com/proxy?url=http://api.reveldigital.com/devices?api_key="+revelKey, function (data) {
                 var longitudeH;
                 var latitudeH;
                 var deviceName;
