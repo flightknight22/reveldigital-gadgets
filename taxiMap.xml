@@ -8,7 +8,7 @@
     <UserPref name="Zoom" display_name="Zoom" default_value="" />
 
     <Content type="html">
-
+</ModulePrefs>
 <![CDATA[
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
