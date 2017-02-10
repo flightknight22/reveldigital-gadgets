@@ -5,7 +5,9 @@
     <ModulePrefs title="Revel Taxi Gadget" description="Displays Taxis On A Map" author="RevelDigital" background="transparent">
 
         <UserPref name="apikey" display_name="API KEY" default_value="" />
-        <UserPref name="Zoom" display_name="Zoom" default_value="" />
+        <UserPref name="Zoom" display_name="Zoom" default_value="13" />
+        <UserPref name="imageUrl" display_name="Marker Icon URL" default_value="" />
+        <UserPref name="stoppedUrl" display_name="Stopped Marker Icon URL" default_value="" />        
         <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
         <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />  
         
@@ -27,6 +29,7 @@
     <script type="text/javascript">
         var prefs = new gadgets.Prefs();
         var revelKey = prefs.getString("apikey");
+        var markerIcon = revel
         var map;
         var zoom = prefs.getString("Zoom");
         var array = new Array();
@@ -93,9 +96,12 @@
         }
 
         class MapObject{
-            constructor(name, obj){
+            constructor(name, obj, long, lati){
                 this.name = name;
                 this.obj = obj;
+                this.long = long;
+                this.lati = lati; 
+                this.stopped = 0;
             }
             getNameObj(){
                 return this.name;
@@ -103,7 +109,12 @@
             getMapMarker(){
                 return this.obj;
             }
-        }
+            increaseStop(){
+                this.stopped++;
+            }
+            resetStoppde(){
+                this.stopped = 0;
+            }
 
         gadgets.util.registerOnLoadHandler(initialize);
     </script>
